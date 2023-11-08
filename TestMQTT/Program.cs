@@ -2,7 +2,9 @@
 using HiveMQtt.Client.Options;
 using HiveMQtt.MQTT5.ReasonCodes;
 using HiveMQtt.MQTT5.Types;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
+using Model;
 
 var options = new HiveMQClientOptions
 {
@@ -49,12 +51,18 @@ client.OnMessageReceived += (sender, args) =>
 {
     string received_message = args.PublishMessage.PayloadAsString;
     Console.WriteLine(received_message);
+    Deserializer(received_message);
 
 };
 
 // Subscribe
 while (true) { await client.SubscribeAsync("#").ConfigureAwait(false); }
 
-//await client.SubscribeAsync("Test").ConfigureAwait(false);
+//await client.SubscribeAsync("#").ConfigureAwait(false);
 
 //while (true) { }
+
+static void Deserializer(string jsonReceived)
+{
+    Measurements measurements = JsonSerializer.Deserialize<Measurements>(jsonReceived);
+}
