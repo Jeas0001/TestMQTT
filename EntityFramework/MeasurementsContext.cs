@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model;
+using System;
+using System.Collections.Generic;
 
 namespace EntityFramework
 {
@@ -9,7 +11,10 @@ namespace EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=library;user=user;password=password");
+            optionsBuilder.UseMySQL("server=mysql9.dandomain.dk;database=saaapidk_db;user=saaapidk;password=dBSensorPW_081120");
         }
     }
 }
+//saa-api.dk02
+//dBSensorJe2
+//linux214.dandomain.dk

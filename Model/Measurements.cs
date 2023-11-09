@@ -2,13 +2,10 @@
 {
     public class Measurements
     {
-        public int AudioMeasurement { get; set; }
+        public int ID { get; set; }
 
-        public int MeasurementId { get; set; }
+        public int Decibel { get; set; }
 
-        public string Date { get; set; }
-
-        public string Location { get; set; }
-
+        public DateTime DataTime { get; set; }
     }
 }
