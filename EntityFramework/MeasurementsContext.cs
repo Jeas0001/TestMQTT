@@ -11,7 +11,7 @@ namespace EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=mysql9.dandomain.dk;database=saaapidk_db;user=saaapidk;password=dBSensorPW_081120");
+            optionsBuilder.UseMySQL("");
         }
     }
 }
